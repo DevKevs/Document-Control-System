@@ -1,0 +1,44 @@
+﻿@model Capa_Entidad.Departamento
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <style>
+        #delete-box {
+            background-color: #31312F;
+            margin: 5px;
+            border-radius: 10px;
+            color: white;
+        }
+        body {
+            background: linear-gradient(30deg, crimson,sienna, royalblue, indianred, purple);
+        }
+    </style>
+
+    <div id="delete-box">
+        <br />  
+        <h2>Borrar departamento</h2>
+
+        <h3>El campo será borrado permanentemente, ¿esta seguro de eliminarlo?</h3>
+        <hr />
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ID_departamento, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ID_departamento, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ID_departamento, "", new { @class = "text-danger" })
+                    <br /><br />
+                </div>
+            </div>
+
+            <div class="form-actions no-color">
+                <center><button class="btn btn-danger"><i class="fas fa-trash-alt"></i> Eliminar Departamento</button></center>
+                <br /><br />
+            </div>
+         }
+    </div>

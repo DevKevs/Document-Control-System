@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FINALPRG2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Departamento">
+    <Key>
+      <PropertyRef Name="ID_departamento" />
+    </Key>
+    <Property Name="ID_departamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Departamento1" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Siglas" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Empleados" Relationship="Self.FK__Empleados__IDdep__534D60F1" FromRole="Departamento" ToRole="Empleados" />
+  </EntityType>
+  <EntityType Name="Documentos">
+    <Key>
+      <PropertyRef Name="ID_documento" />
+    </Key>
+    <Property Name="ID_documento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Documento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_empleado" Type="Int32" />
+    <Property Name="Dpt_origen" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Dpt_destino" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Fecha" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Empleados" Relationship="Self.FK__Documento__ID_em__5CD6CB2B" FromRole="Documentos" ToRole="Empleados" />
+  </EntityType>
+  <EntityType Name="Empleados">
+    <Key>
+      <PropertyRef Name="ID_empleado" />
+    </Key>
+    <Property Name="ID_empleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Correo" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cargo" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IDdepartamento" Type="Int32" />
+    <NavigationProperty Name="Departamento" Relationship="Self.FK__Empleados__IDdep__534D60F1" FromRole="Empleados" ToRole="Departamento" />
+    <NavigationProperty Name="Documentos" Relationship="Self.FK__Documento__ID_em__5CD6CB2B" FromRole="Empleados" ToRole="Documentos" />
+  </EntityType>
+  <Association Name="FK__Empleados__IDdep__534D60F1">
+    <End Role="Departamento" Type="Self.Departamento" Multiplicity="0..1" />
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamento">
+        <PropertyRef Name="ID_departamento" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="IDdepartamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Documento__ID_em__5CD6CB2B">
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="0..1" />
+    <End Role="Documentos" Type="Self.Documentos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleados">
+        <PropertyRef Name="ID_empleado" />
+      </Principal>
+      <Dependent Role="Documentos">
+        <PropertyRef Name="ID_empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FINALPRG2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Departamento" EntityType="Self.Departamento" />
+    <EntitySet Name="Documentos" EntityType="Self.Documentos" />
+    <EntitySet Name="Empleados" EntityType="Self.Empleados" />
+    <AssociationSet Name="FK__Empleados__IDdep__534D60F1" Association="Self.FK__Empleados__IDdep__534D60F1">
+      <End Role="Departamento" EntitySet="Departamento" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Documento__ID_em__5CD6CB2B" Association="Self.FK__Documento__ID_em__5CD6CB2B">
+      <End Role="Empleados" EntitySet="Empleados" />
+      <End Role="Documentos" EntitySet="Documentos" />
+    </AssociationSet>
+    <FunctionImport Name="rpt_allDocx" ReturnType="Collection(FINALPRG2Model.rpt_allDocx_Result)" />
+    <FunctionImport Name="rpt_DestinationDept" ReturnType="Collection(FINALPRG2Model.rpt_DestinationDept_Result)">
+      <Parameter Name="destination" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="rpt_empleados" ReturnType="Collection(FINALPRG2Model.rpt_empleados_Result)" />
+    <FunctionImport Name="rpt_OriginDept" ReturnType="Collection(FINALPRG2Model.rpt_OriginDept_Result)">
+      <Parameter Name="Origin" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="rpt_TimeLapse" ReturnType="Collection(FINALPRG2Model.rpt_TimeLapse_Result)">
+      <Parameter Name="desde" Mode="In" Type="String" />
+      <Parameter Name="hasta" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="rpt_userDocx" ReturnType="Collection(FINALPRG2Model.rpt_userDocx_Result)">
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="rpt_allDocx_Result">
+    <Property Type="String" Name="Codigo" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Documento" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Nombre_solicitante" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Dpt_origen" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Dpt_destino" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Fecha" Nullable="false" MaxLength="11" />
+  </ComplexType>
+  <ComplexType Name="rpt_DestinationDept_Result">
+    <Property Type="String" Name="Codigo" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Documento" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Nombre_solicitante" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Dpt_origen" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Dpt_destino" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Fecha" Nullable="false" MaxLength="11" />
+  </ComplexType>
+  <ComplexType Name="rpt_empleados_Result">
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Cargo" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Correo" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Departamento" Nullable="false" MaxLength="40" />
+  </ComplexType>
+  <ComplexType Name="rpt_OriginDept_Result">
+    <Property Type="String" Name="Codigo" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Documento" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Nombre_solicitante" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Dpt_origen" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Dpt_destino" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Fecha" Nullable="false" MaxLength="11" />
+  </ComplexType>
+  <ComplexType Name="rpt_TimeLapse_Result">
+    <Property Type="String" Name="Codigo" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Documento" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Nombre_solicitante" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Dpt_origen" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Dpt_destino" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Fecha" Nullable="false" MaxLength="11" />
+  </ComplexType>
+  <ComplexType Name="rpt_userDocx_Result">
+    <Property Type="String" Name="Codigo" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Documento" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Nombre_solicitante" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Dpt_origen" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Dpt_destino" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Fecha" Nullable="false" MaxLength="11" />
+  </ComplexType>
+</Schema>

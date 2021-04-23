@@ -1,0 +1,43 @@
+﻿@model Capa_Entidad.Empleados
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <style>
+        .form-horizontal {
+            background-color: #31312F;
+            margin: 5px;
+            border-radius: 10px;
+            color: white;
+        }
+        body {
+            background: linear-gradient(30deg, crimson,sienna, royalblue, indianred, purple);
+        }
+    </style>
+    <div class="form-horizontal">
+        <br />
+        <h2>Borrar Empleados</h2>
+        <h3>Seleccione el ID del empleado a borrar</h3>
+        <hr />
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ID_empleado, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ID_empleado, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ID_empleado, "", new { @class = "text-danger" })
+                    <br />
+                </div>
+            </div>
+
+            <div class="form-actions no-color">
+                <center><button class="btn btn-danger"><i class="fas fa-trash-alt"></i> Eliminar Empleado</button></center>
+                <br /><br />
+            </div>
+        }
+    </div>

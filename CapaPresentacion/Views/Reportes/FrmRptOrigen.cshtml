@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Filtro origen";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <style>
+        .col-md-8 {
+            background-color: #31312F;
+            border-radius: 7px;
+            color: white;
+            margin-top: 25px;
+        }
+
+        input[type="text"] {
+            border: none;
+            border-bottom: 1px solid #fff;
+            background: transparent;
+            outline: none;
+            height: 40px;
+            color: #fff;
+            font-size: 16px;
+        }
+        body {
+            background: linear-gradient(30deg, crimson,sienna, royalblue, indianred, purple);
+        }
+    </style>
+
+<div class="col-md-8">
+    <h2>Reporte documentos por departamentos de origen</h2>
+    <hr />
+    <form action="/Reportes/RptOrigen" method="post">
+        <div class="input-group flex-nowrap">
+            <label>Departamento origen del documento</label>
+            <input type="text" name="origin" class="form-control" placeholder="Origen">
+            <br /><br /><br /><br />
+            <button class="btn btn-info">Buscar Documentos <i class="fas fa-search"></i></button>
+        </div>
+        <hr />
+    </form>
+</div>
+<div class="col-md-4">
+    <br />
+    <img src="~/imagenes/undraw_Content_structure_re_ebkv.svg" alt="vector" width="300"/>
+</div>
+

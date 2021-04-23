@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FINALPRG2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Departamento">
+    <Key>
+      <PropertyRef Name="ID_departamento" />
+    </Key>
+    <Property Name="ID_departamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Departamento" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Siglas" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Documentos">
+    <Key>
+      <PropertyRef Name="ID_documento" />
+    </Key>
+    <Property Name="ID_documento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Documento" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ID_empleado" Type="int" />
+    <Property Name="Dpt_origen" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Dpt_destino" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Fecha" Type="varchar" MaxLength="11" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empleados">
+    <Key>
+      <PropertyRef Name="ID_empleado" />
+    </Key>
+    <Property Name="ID_empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Correo" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Cargo" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="IDdepartamento" Type="int" />
+  </EntityType>
+  <Association Name="FK__Documento__ID_em__5CD6CB2B">
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="0..1" />
+    <End Role="Documentos" Type="Self.Documentos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleados">
+        <PropertyRef Name="ID_empleado" />
+      </Principal>
+      <Dependent Role="Documentos">
+        <PropertyRef Name="ID_empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Empleados__IDdep__534D60F1">
+    <End Role="Departamento" Type="Self.Departamento" Multiplicity="0..1" />
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamento">
+        <PropertyRef Name="ID_departamento" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="IDdepartamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="rpt_allDocx" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="rpt_DestinationDept" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="destination" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="rpt_empleados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="rpt_OriginDept" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Origin" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="rpt_TimeLapse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="desde" Type="varchar" Mode="In" />
+    <Parameter Name="hasta" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="rpt_userDocx" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="FINALPRG2ModelStoreContainer">
+    <EntitySet Name="Departamento" EntityType="Self.Departamento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documentos" EntityType="Self.Documentos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Documento__ID_em__5CD6CB2B" Association="Self.FK__Documento__ID_em__5CD6CB2B">
+      <End Role="Empleados" EntitySet="Empleados" />
+      <End Role="Documentos" EntitySet="Documentos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Empleados__IDdep__534D60F1" Association="Self.FK__Empleados__IDdep__534D60F1">
+      <End Role="Departamento" EntitySet="Departamento" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

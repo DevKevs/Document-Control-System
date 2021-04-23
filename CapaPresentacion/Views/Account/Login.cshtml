@@ -1,0 +1,88 @@
+﻿@using CapaPresentacion.Models
+@{ 
+    Layout = null;
+}
+@model LoginViewModel
+@{
+    ViewBag.Title = "Iniciar sesión";
+}
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+<script src="https://kit.fontawesome.com/1c4197373f.js" crossorigin="anonymous"></script>
+<style>
+    .col-md-6 {
+        background-color: #31312F;
+        border-radius: 10px;
+        color: white;
+        margin-top: 25px;
+        margin-left: 10rem;
+    }
+
+    body {
+        background: linear-gradient(30deg, crimson,sienna, royalblue, indianred, purple);
+    }
+    .title {
+        margin-left: 10rem;
+    }
+</style>
+<h2 class="title"><b>@ViewBag.Title.</b></h2>
+<div class="row">
+    <div class="col-md-6">
+        <section id="loginForm">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <h4>Utilice una cuenta local para iniciar sesión.</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <div class="checkbox">
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            @Html.LabelFor(m => m.RememberMe)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Iniciar sesión" class="btn btn-success" />
+                    </div>
+                </div>
+                <p>
+                    @Html.ActionLink("Registrarse como usuario nuevo", "Register")
+                </p>
+                //Habilite esta opción una vez tenga la confirmación de la cuenta habilitada para la funcionalidad de restablecimiento de contraseña
+                @*<p>
+                        @Html.ActionLink("¿Ha olvidado su contraseña?", "ForgotPassword")
+                    </p>*@
+            }
+        </section>
+    </div>
+    <div class="col-md-4">
+        <section id="socialLoginForm">
+            <img src="~/imagenes/undraw_Confirmed_re_sef7.svg" alt="vector" width="550" />
+            @*@Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })*@
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")

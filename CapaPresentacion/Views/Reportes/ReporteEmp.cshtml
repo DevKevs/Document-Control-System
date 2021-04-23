@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Capa_Entidad.rpt_empleados_Result>
+
+@{
+    ViewBag.Title = "Reporte Empleados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <style>
+
+        body {
+            background-image: radial-gradient(circle at 30.31% 7.77%, #ffe4f7 0, #ffe3f2 3.33%, #ffe3ed 6.67%, #ffe3e8 10%, #ffe3e3 13.33%, #ffe4df 16.67%, #ffe5db 20%, #ffe6d7 23.33%, #ffe7d3 26.67%, #ffe9d0 30%, #ffeace 33.33%, #ffeccd 36.67%, #ffedcc 40%, #fdefcb 43.33%, #f7f0cc 46.67%, #f2f2cd 50%, #ecf3cf 53.33%, #e7f5d1 56.67%, #e1f6d4 60%, #dcf7d8 63.33%, #d6f8dc 66.67%, #d1f9e1 70%, #cdfae5 73.33%, #c9faea 76.67%, #c5faef 80%, #c3faf4 83.33%, #c1faf9 86.67%, #c0fafe 90%, #c0faff 93.33%, #c2f9ff 96.67%, #c4f8ff 100%);
+        }
+    </style>
+<h2>Reporte de Empleados</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cargo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departamento)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cargo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departamento)
+        </td>
+    </tr>
+}
+
+</table>

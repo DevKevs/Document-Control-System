@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="P2CAPASModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ESTUDIANTES">
+    <Key>
+      <PropertyRef Name="IdEstudiante" />
+    </Key>
+    <Property Name="IdEstudiante" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Matricula" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Carrera" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="EDAD" Type="Int32" />
+    <NavigationProperty Name="SECCIONES" Relationship="Self.FK__SECCIONES__IdEst__4BAC3F29" FromRole="ESTUDIANTES" ToRole="SECCIONES" />
+  </EntityType>
+  <EntityType Name="SECCIONES">
+    <Key>
+      <PropertyRef Name="IdSecciones" />
+    </Key>
+    <Property Name="IdSecciones" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MateriaGrupo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IdEstudiante" Type="Int32" />
+    <NavigationProperty Name="ESTUDIANTES" Relationship="Self.FK__SECCIONES__IdEst__4BAC3F29" FromRole="SECCIONES" ToRole="ESTUDIANTES" />
+  </EntityType>
+  <Association Name="FK__SECCIONES__IdEst__4BAC3F29">
+    <End Role="ESTUDIANTES" Type="Self.ESTUDIANTES" Multiplicity="0..1" />
+    <End Role="SECCIONES" Type="Self.SECCIONES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTUDIANTES">
+        <PropertyRef Name="IdEstudiante" />
+      </Principal>
+      <Dependent Role="SECCIONES">
+        <PropertyRef Name="IdEstudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="P2CAPASEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ESTUDIANTES" EntityType="Self.ESTUDIANTES" />
+    <EntitySet Name="SECCIONES" EntityType="Self.SECCIONES" />
+    <AssociationSet Name="FK__SECCIONES__IdEst__4BAC3F29" Association="Self.FK__SECCIONES__IdEst__4BAC3F29">
+      <End Role="ESTUDIANTES" EntitySet="ESTUDIANTES" />
+      <End Role="SECCIONES" EntitySet="SECCIONES" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,37 @@
+C:\Users\johan\source\repos\MVC+CapasG3\Capa_Entidad\bin\Debug\Capa_Entidad.dll.config
+C:\Users\johan\source\repos\MVC+CapasG3\Capa_Entidad\bin\Debug\Capa_Entidad.dll
+C:\Users\johan\source\repos\MVC+CapasG3\Capa_Entidad\bin\Debug\Capa_Entidad.pdb
+C:\Users\johan\source\repos\MVC+CapasG3\Capa_Entidad\bin\Debug\EntityFramework.dll
+C:\Users\johan\source\repos\MVC+CapasG3\Capa_Entidad\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\johan\source\repos\MVC+CapasG3\Capa_Entidad\bin\Debug\EntityFramework.xml
+C:\Users\johan\source\repos\MVC+CapasG3\Capa_Entidad\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\johan\source\repos\MVC+CapasG3\Capa_Entidad\obj\Debug\Capa_Entidad.csproj.CoreCompileInputs.cache
+C:\Users\johan\source\repos\MVC+CapasG3\Capa_Entidad\obj\Debug\Capa_Entidad.csproj.CopyComplete
+C:\Users\johan\source\repos\MVC+CapasG3\Capa_Entidad\obj\Debug\Capa_Entidad.dll
+C:\Users\johan\source\repos\MVC+CapasG3\Capa_Entidad\obj\Debug\Capa_Entidad.pdb
+C:\Users\johan\source\repos\MVC+CapasG3\Capa_Entidad\obj\Debug\Capa_Entidad.csprojAssemblyReference.cache
+C:\Users\gt\Desktop\MVC+CapasG3\Capa_Entidad\bin\Debug\Capa_Entidad.dll.config
+C:\Users\gt\Desktop\MVC+CapasG3\Capa_Entidad\bin\Debug\Capa_Entidad.dll
+C:\Users\gt\Desktop\MVC+CapasG3\Capa_Entidad\bin\Debug\Capa_Entidad.pdb
+C:\Users\gt\Desktop\MVC+CapasG3\Capa_Entidad\bin\Debug\EntityFramework.dll
+C:\Users\gt\Desktop\MVC+CapasG3\Capa_Entidad\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\gt\Desktop\MVC+CapasG3\Capa_Entidad\bin\Debug\EntityFramework.xml
+C:\Users\gt\Desktop\MVC+CapasG3\Capa_Entidad\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\gt\Desktop\MVC+CapasG3\Capa_Entidad\obj\Debug\Capa_Entidad.csproj.CoreCompileInputs.cache
+C:\Users\gt\Desktop\MVC+CapasG3\Capa_Entidad\obj\Debug\Capa_Entidad.csproj.CopyComplete
+C:\Users\gt\Desktop\MVC+CapasG3\Capa_Entidad\obj\Debug\Capa_Entidad.dll
+C:\Users\gt\Desktop\MVC+CapasG3\Capa_Entidad\obj\Debug\Capa_Entidad.pdb
+C:\Users\gt\Desktop\Proyecto Final prg2\Capa_Entidad\bin\Debug\Capa_Entidad.dll.config
+C:\Users\gt\Desktop\Proyecto Final prg2\Capa_Entidad\bin\Debug\Capa_Entidad.dll
+C:\Users\gt\Desktop\Proyecto Final prg2\Capa_Entidad\bin\Debug\Capa_Entidad.pdb
+C:\Users\gt\Desktop\Proyecto Final prg2\Capa_Entidad\bin\Debug\EntityFramework.dll
+C:\Users\gt\Desktop\Proyecto Final prg2\Capa_Entidad\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\gt\Desktop\Proyecto Final prg2\Capa_Entidad\bin\Debug\EntityFramework.xml
+C:\Users\gt\Desktop\Proyecto Final prg2\Capa_Entidad\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\gt\Desktop\Proyecto Final prg2\Capa_Entidad\obj\Debug\Capa_Entidad.csproj.CoreCompileInputs.cache
+C:\Users\gt\Desktop\Proyecto Final prg2\Capa_Entidad\obj\Debug\Capa_Entidad.csproj.CopyComplete
+C:\Users\gt\Desktop\Proyecto Final prg2\Capa_Entidad\obj\Debug\Capa_Entidad.dll
+C:\Users\gt\Desktop\Proyecto Final prg2\Capa_Entidad\obj\Debug\Capa_Entidad.pdb
+C:\Users\gt\Desktop\Proyecto Final prg2\Capa_Entidad\bin\Debug\es\EntityFramework.resources.dll
+C:\Users\gt\Desktop\Proyecto Final prg2\Capa_Entidad\bin\Debug\es\EntityFramework.SqlServer.resources.dll
+C:\Users\gt\Desktop\Proyecto Final prg2\Capa_Entidad\obj\Debug\Capa_Entidad.csprojAssemblyReference.cache

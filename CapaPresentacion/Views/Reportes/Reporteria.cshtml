@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "Reporteria";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <style>
+        #report .col-md-4 {
+            background-color: #31312F;
+            margin: 5px;
+            border-radius: 7px;
+            margin-right: 15px;
+            color: white;
+        }
+        .btn-success {
+            background-color: #6C63FF;
+            border-color: #6C63FF;
+        }
+        body {
+            background: linear-gradient(30deg, crimson,sienna, royalblue, indianred, purple);
+        }
+    </style>
+
+    <div id="report" class="col-md-8">
+        <center>
+            <h2><b>Gestion de Reporteria</b></h2>
+            <hr />
+        </center>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Empleados.</h2>
+                <p>
+                    Generar reporte de todos los Emleados
+                </p>
+                <p><a class="btn btn-success" href="/Reportes/ReporteEmp"><i class="fas fa-running"></i> Ir &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Departamento</h2>
+                <p>Generar reporte de todos los Departamentos </p>
+                <p><a class="btn btn-success" href="/Reportes/ReporteDep"><i class="fas fa-running"></i> Ir &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Documentos.</h2>
+                <p>Generar reporte de todos los Documentos </p>
+                <p><a class="btn btn-success" href="/Reportes/ReporteDoc"><i class="fas fa-running"></i> Ir  &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Usuarios.</h2>
+                <p>
+                    Generar reporte de Documentos por Empleados
+                </p>
+                <p><a class="btn btn-success" href="/Reportes/FrmRptUserDocx"><i class="fas fa-running"></i> Ir &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Origen.</h2>
+                <p>
+                    Generar reporte de Documentos por Origen
+                </p>
+                <p><a class="btn btn-success" href="/Reportes/FrmRptOrigen"><i class="fas fa-running"></i> Ir &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Destino.</h2>
+                <p>
+                    Generar reporte de Documentos por Destino
+                </p>
+                <p><a class="btn btn-success" href="/Reportes/FrmRptDestino"><i class="fas fa-running"></i> Ir &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Lapso.</h2>
+                <p>
+                    Generar reporte de Documentos por lapso de tiempo
+                </p>
+                <p><a class="btn btn-success" href="/Reportes/FrmRptLapseTime"><i class="fas fa-running"></i> Ir &raquo;</a></p>
+            </div>
+        </div>
+       
+
+        @*<a href="/Reportes/ReporteEmp">Reporte de empleados</a> |
+        <a href="/Reportes/ReporteDep">Reporte de Departamentos</a> |
+        <a href="/Reportes/ReporteDoc">Reporte de Documentos</a> |
+        <a href="/Reportes/FrmRptUserDocx">Reporte de Documentos por empleados</a>|
+        <a href="/Reportes/FrmRptOrigen">Reporte de Documentos por dpOrigen</a>|
+        <a href="/Reportes/FrmRptDestino">Reporte de Documentos por dpDestino</a>|
+        <a href="/Reportes/FrmRptLapseTime">Reporte de Documentos por lapso de tiempo</a>*@
+    </div>
+<div class="col-md-4">
+    <br /><br /><br /><br /><br />
+    <img src="~/imagenes/undraw_Metrics_re_6g90.svg" alt="Vector" width="350" />
+</div>

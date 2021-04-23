@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FINALPRG2ModelStoreContainer" CdmEntityContainer="FINALPRG2Entities">
+    <EntitySetMapping Name="Departamento">
+      <EntityTypeMapping TypeName="FINALPRG2Model.Departamento">
+        <MappingFragment StoreEntitySet="Departamento">
+          <ScalarProperty Name="ID_departamento" ColumnName="ID_departamento" />
+          <ScalarProperty Name="Departamento1" ColumnName="Departamento" />
+          <ScalarProperty Name="Siglas" ColumnName="Siglas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documentos">
+      <EntityTypeMapping TypeName="FINALPRG2Model.Documentos">
+        <MappingFragment StoreEntitySet="Documentos">
+          <ScalarProperty Name="ID_documento" ColumnName="ID_documento" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="ID_empleado" ColumnName="ID_empleado" />
+          <ScalarProperty Name="Dpt_origen" ColumnName="Dpt_origen" />
+          <ScalarProperty Name="Dpt_destino" ColumnName="Dpt_destino" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleados">
+      <EntityTypeMapping TypeName="FINALPRG2Model.Empleados">
+        <MappingFragment StoreEntitySet="Empleados">
+          <ScalarProperty Name="ID_empleado" ColumnName="ID_empleado" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="IDdepartamento" ColumnName="IDdepartamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="rpt_allDocx" FunctionName="FINALPRG2Model.Store.rpt_allDocx">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FINALPRG2Model.rpt_allDocx_Result">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="Nombre_solicitante" ColumnName="Nombre solicitante" />
+          <ScalarProperty Name="Dpt_origen" ColumnName="Dpt_origen" />
+          <ScalarProperty Name="Dpt_destino" ColumnName="Dpt_destino" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rpt_DestinationDept" FunctionName="FINALPRG2Model.Store.rpt_DestinationDept">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FINALPRG2Model.rpt_DestinationDept_Result">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="Nombre_solicitante" ColumnName="Nombre solicitante" />
+          <ScalarProperty Name="Dpt_origen" ColumnName="Dpt_origen" />
+          <ScalarProperty Name="Dpt_destino" ColumnName="Dpt_destino" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rpt_empleados" FunctionName="FINALPRG2Model.Store.rpt_empleados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FINALPRG2Model.rpt_empleados_Result">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rpt_OriginDept" FunctionName="FINALPRG2Model.Store.rpt_OriginDept">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FINALPRG2Model.rpt_OriginDept_Result">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="Nombre_solicitante" ColumnName="Nombre solicitante" />
+          <ScalarProperty Name="Dpt_origen" ColumnName="Dpt_origen" />
+          <ScalarProperty Name="Dpt_destino" ColumnName="Dpt_destino" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rpt_TimeLapse" FunctionName="FINALPRG2Model.Store.rpt_TimeLapse">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FINALPRG2Model.rpt_TimeLapse_Result">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="Nombre_solicitante" ColumnName="Nombre solicitante" />
+          <ScalarProperty Name="Dpt_origen" ColumnName="Dpt_origen" />
+          <ScalarProperty Name="Dpt_destino" ColumnName="Dpt_destino" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rpt_userDocx" FunctionName="FINALPRG2Model.Store.rpt_userDocx">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FINALPRG2Model.rpt_userDocx_Result">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="Nombre_solicitante" ColumnName="Nombre solicitante" />
+          <ScalarProperty Name="Dpt_origen" ColumnName="Dpt_origen" />
+          <ScalarProperty Name="Dpt_destino" ColumnName="Dpt_destino" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

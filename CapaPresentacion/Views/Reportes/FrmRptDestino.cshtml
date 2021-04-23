@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Filtro destino";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <style>
+        .col-md-8 {
+            background-color: #31312F;
+            border-radius: 7px;
+            color: white;
+            margin-top: 25px;
+        }
+
+        input[type="text"] {
+            border: none;
+            border-bottom: 1px solid #fff;
+            background: transparent;
+            outline: none;
+            height: 40px;
+            color: #fff;
+            font-size: 16px;
+        }
+        body {
+            background: linear-gradient(30deg, crimson,sienna, royalblue, indianred, purple);
+        }
+    </style>
+
+<div class="col-md-8">
+    <h2>Reporte documentos por departamentos de destino</h2>
+    <hr />
+    <form action="/Reportes/RptDestino" method="post">
+        <div class="input-group flex-nowrap">
+            <label>Despartamento de destino</label>
+            <input type="text" name="destination" class="form-control" placeholder="Destino">
+            <br /><br /><br /><br />
+            <button class="btn btn-info">Buscar Documentos <i class="fas fa-search"></i></button>
+        </div>
+        <hr />
+    </form>
+</div>
+<div class="col-md-4">
+    <br />
+    <img src="~/imagenes/undraw_Hiking_re_k0bc.svg" alt="vector" width="400"/>
+</div>
